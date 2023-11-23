@@ -1,0 +1,20 @@
+{
+    "name": "leemangold/css_injector",
+    "type": "drupal-module",
+    "description": "Provides a configuration US for CSS Overrides.",
+    "keywords": ["Drupal"],
+    "license": "MIT",
+    "require": {
+        "drupal/core": "^8.8 || ^9 || ^10",
+    },
+    "autoload": {
+        "psr-4": {
+            "Drupal\\css_injector\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "support": {
+        "issues": "",
+        "source": ""
+    }
+}
