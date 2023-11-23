@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Implements hook_page_attachments().
+ */
+function css_injector_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'css_injector/injector';
+}

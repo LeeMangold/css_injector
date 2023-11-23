@@ -1,0 +1,6 @@
+css_injector.admin:
+  title: 'CSS Injector'
+  description: 'Add custom CSS to the site.'
+  parent: system.admin_config_system
+  route_name: css_injector.form
+  weight: 100

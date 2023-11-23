@@ -1,0 +1,4 @@
+injector:
+  css:
+    theme:
+      css/custom.css: {}

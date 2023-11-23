@@ -1,0 +1,7 @@
+css_injector.form:
+  path: '/admin/config/system/css-injector'
+  defaults:
+    _form: '\Drupal\css_injector\Form\CssInjectorForm'
+    _title: 'CSS Injector'
+  requirements:
+    _permission: 'administer site configuration'
