@@ -3,6 +3,3 @@ type: module
 description: 'Allows administrators to inject CSS into the site.'
 package: 'Mangold'
 core_version_requirement: ^10
-dependencies:
-  - core/jquery
-  - core/drupalSettings
