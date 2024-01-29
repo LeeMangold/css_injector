@@ -6,27 +6,55 @@ use Drupal;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
+/**
+ * Form controller for the CSS Injector form.
+ *
+ * This form allows users to inject custom CSS into their Drupal site.
+ * It provides a text area where users can enter their CSS code, which
+ * will be applied to every page of the site. The form checks if the
+ * custom.css file is writable and displays a status message accordingly.
+ */
 class CssInjectorForm extends ConfigFormBase {
 
-  /**
-   * {@inheritdoc}
-   */
+    /**
+     * Returns a list of configuration names that can be edited.
+     *
+     * {@inheritdoc}
+     *
+     * @return array
+     *   An array containing the configuration names.
+     */
   protected function getEditableConfigNames(): array
   {
     return ['css_injector.settings'];
   }
 
-  /**
-   * {@inheritdoc}
-   */
+    /**
+     * Returns the unique ID of the form.
+     *
+     * {@inheritdoc}
+     *
+     * @return string
+     *   The unique ID of the form.
+     */
   public function getFormId(): string
   {
     return 'css_injector_form';
   }
 
-  /**
-   * {@inheritdoc}
-   */
+    /**
+     * Builds the CSS Injector form.
+     *
+     * {@inheritdoc}
+     *
+     * @param array $form
+     *   An associative array containing the structure of the form.
+     * @param \Drupal\Core\Form\FormStateInterface $form_state
+     *   The current state of the form.
+     *
+     * @return array
+     *   The form structure.
+     */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $module_handler = \Drupal::service('module_handler');
     $css_path = $module_handler->getModule('css_injector')->getPath() . '/css/custom.css';
@@ -67,9 +95,16 @@ class CssInjectorForm extends ConfigFormBase {
   }
 
 
-  /**
-   * {@inheritdoc}
-   */
+    /**
+     * Form submission handler.
+     *
+     * {@inheritdoc}
+     *
+     * @param array &$form
+     *   An associative array containing the structure of the form.
+     * @param \Drupal\Core\Form\FormStateInterface $form_state
+     *   The current state of the form.
+     */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $module_handler = \Drupal::service('module_handler');
     $css_path = $module_handler->getModule('css_injector')->getPath() . '/css/custom.css';
